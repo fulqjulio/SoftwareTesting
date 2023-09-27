@@ -6,6 +6,9 @@
  */
 import static org.junit.Assert.*;
 import org.junit.Test;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class DemoTest {
     @Test
@@ -57,18 +60,20 @@ public class DemoTest {
         assertFalse(Demo.isTriangle(1, 2, -1));
     }
 
-    /*
     @Test
     public void test_main_program_1() {
         ByteArrayInputStream in = new ByteArrayInputStream("5\n12\n13\n".getBytes());
         System.setIn(in);
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
-        String consoleOutput = "Enter side 1:\n";
-        consoleOutput += "Enter side 2:\n";
-        consoleOutput += "Enter side 3:\n";
-        consoleOutput += "This is a triangle:\n";
+
+        String[] args = {};
+        Demo.main(args);
+
+        String consoleOutput = "Enter side 1: " + System.getProperty("line.separator");
+        consoleOutput += "Enter side 2: " + System.getProperty("line.separator");
+        consoleOutput += "Enter side 3: " + System.getProperty("line.separator");
+        consoleOutput += "This is a triangle." + System.getProperty("line.separator");
         assertEquals(consoleOutput, out.toString());
     }
-    */
 }
